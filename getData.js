@@ -5,7 +5,7 @@ function getData(endpoint, callback = () => null) {
 		url: endpoint,
 		onload: ({ responseText: data }) => {
 			data = JSON.parse(data);
-			data.status === 200 && callback(data);
+			callback(data);
 		},
 		onabort: (ex) => console.error("[ABORT] Oh no, something went wrong", ex),
 		onerror: (ex) => console.error("[ERROR] Oh no, something went wrong", ex),
